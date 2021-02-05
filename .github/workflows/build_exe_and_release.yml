@@ -12,6 +12,8 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
       - name: Get the version #https://github.community/t/how-to-get-just-the-tag-name/16241/10
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}          
