@@ -1,1 +1,2 @@
-Adding step in build yml to install dependencies.
+Undid previous build yml changes.
+Moved requirements.txt to correct location.
