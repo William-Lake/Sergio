@@ -1,2 +1,1 @@
-Undid previous build yml changes.
-Moved requirements.txt to correct location.
+Added colorama to requirements to resolve tqdm issues.
