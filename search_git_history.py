@@ -34,7 +34,33 @@ def yield_results(prog_args,term):
         print(f'Exception while collecting git commit hashes!')
         
         print(str(e))
-        
+
+def args_acceptable(args):
+
+    repo_loc = args.repo_loc
+
+    search_terms = args.search_terms
+
+    if not repo_loc.exists():
+
+        return False, f'{repo_loc.__str__()} doesn\'t exist!'
+
+    if search_terms is None:
+
+        search_terms = []
+
+    search_terms = [
+        term
+        for term
+        in search_terms
+        if len(term.strip()) > 0
+    ]
+
+    if not search_terms:
+
+        return False, 'Please provide at least one search term!'
+
+    return True, None
 
 def gather_args(debug=False):
 
@@ -53,7 +79,19 @@ def gather_args(debug=False):
 
     else:
 
-        return arg_parser.parse_args()
+        args = arg_parser.parse_args()
+
+        args_ok, error_message = args_acceptable(args)
+
+        if not args_ok:
+
+            arg_parser.print_help()
+
+            print(error_message)
+
+            exit()
+
+        return args
 
 def main(prog_args):
     
