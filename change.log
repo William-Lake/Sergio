@@ -1,1 +1,2 @@
-Added colorama to requirements to resolve tqdm issues.
+Updated the directory structure for the new workflows.
+Added test workflow.
