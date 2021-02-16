@@ -1,4 +1,4 @@
-from argparse import ArgumentParser
+from argparse import ArgumentParser, REMAINDER
 from multiprocessing import Pool, freeze_support
 from pathlib import Path
 import json
@@ -68,7 +68,7 @@ def gather_args(debug=False):
 
     arg_parser.add_argument('repo_loc',type=Path)
 
-    arg_parser.add_argument('--search_terms',nargs='+')
+    arg_parser.add_argument('--search_terms',nargs=REMAINDER)
     
     # Not yet implemented, TODO
     # arg_parser.add_argument('--regex',action='store_true')

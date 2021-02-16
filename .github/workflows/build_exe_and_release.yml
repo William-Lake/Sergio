@@ -22,7 +22,7 @@ jobs:
           python -m pip install pyinstaller
           python -m pip install -r requirements.txt
       - name: Build EXE
-        run: pyinstaller --onefile --icon=Serio.ico search_git_history.py
+        run: pyinstaller --onefile --icon=Sergio.ico search_git_history.py
       - name: Move Executable
         run: move dist/search_git_history.exe SERGIO.exe
       - name: Create Release

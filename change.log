@@ -1,1 +1,2 @@
-Added icon.
+Fixed icon issue.
+Added change with argparse so search terms can start with a dash.
